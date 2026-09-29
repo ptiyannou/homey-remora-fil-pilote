@@ -133,3 +133,5 @@ La carte individuelle reprend le titre « Changer le Mode » et la sélection «
 Remora est un projet open source gratuit. Le logiciel du boîtier est disponible sur [hallard/remora_soft](https://github.com/hallard/remora_soft). Cette application Homey est une intégration communautaire indépendante qui communique avec son API HTTP locale. Merci aux auteurs et contributeurs du projet Remora.
 
 Présentation du projet, matériel et logiciel : [tducret/programmateur-fil-pilote-wifi](https://github.com/tducret/programmateur-fil-pilote-wifi). Firmware utilisé pour cette intégration : [hallard/remora_soft](https://github.com/hallard/remora_soft).
+
+[Discussion sur le forum Homey](https://community.homey.app/t/app-pro-shs-test-remora-fil-pilote/160170)

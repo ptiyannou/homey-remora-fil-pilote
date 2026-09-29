@@ -61,3 +61,5 @@ Remora is a free, open-source project. This is an independent community integrat
 - [PyRemora — FreeTHX/pyremora](https://github.com/FreeTHX/pyremora), consulted to verify the HTTP API; not bundled as a dependency.
 
 Thanks to the original authors and contributors. See [image provenance](docs/IMAGE-PROVENANCE.md) for the product visuals.
+
+[Homey community discussion](https://community.homey.app/t/app-pro-shs-test-remora-fil-pilote/160170)
