@@ -1,0 +1,6 @@
+test/
+docs/
+scripts/
+README.md
+node_modules/
+.git/

@@ -1,0 +1,327 @@
+{
+  "id": "fr.remora.filpilote",
+  "version": "0.1.6",
+  "compatibility": ">=12.0.0",
+  "sdk": 3,
+  "runtime": "nodejs",
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Remora Fil Pilote",
+    "fr": "Remora Fil Pilote"
+  },
+  "description": {
+    "en": "Keep every room comfortable with local heating control",
+    "fr": "Le bon mode de chauffage dans chaque pièce, en local"
+  },
+  "category": [
+    "climate"
+  ],
+  "permissions": [],
+  "author": {
+    "name": "yann baillet"
+  },
+  "brandColor": "#23556B",
+  "capabilities": {
+    "remora_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Pilot wire",
+        "fr": "Fil pilote"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker",
+      "values": [
+        {
+          "id": "off",
+          "title": {
+            "en": "Off",
+            "fr": "Off"
+          }
+        },
+        {
+          "id": "eco",
+          "title": {
+            "en": "Eco",
+            "fr": "Eco"
+          }
+        },
+        {
+          "id": "comfort",
+          "title": {
+            "en": "Confort",
+            "fr": "Confort"
+          }
+        },
+        {
+          "id": "frost",
+          "title": {
+            "en": "Hors gel",
+            "fr": "Hors gel"
+          }
+        }
+      ]
+    },
+    "alarm_load_shedding": {
+      "type": "boolean",
+      "title": {
+        "en": "Load shedding",
+        "fr": "Délestage"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    }
+  },
+  "drivers": [
+    {
+      "id": "radiator",
+      "name": {
+        "en": "Remora radiator",
+        "fr": "Radiateur Remora"
+      },
+      "class": "heater",
+      "connectivity": [
+        "lan"
+      ],
+      "capabilities": [
+        "remora_mode",
+        "alarm_load_shedding"
+      ],
+      "pair": [
+        {
+          "id": "connect"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "connect",
+            "next": "add_devices"
+          },
+          "options": {
+            "singular": false
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "connect"
+        }
+      ],
+      "images": {
+        "small": "/drivers/radiator/assets/images/small.png",
+        "large": "/drivers/radiator/assets/images/large.png",
+        "xlarge": "/drivers/radiator/assets/images/xlarge.png"
+      }
+    }
+  ],
+  "flow": {
+    "actions": [
+      {
+        "id": "set_mode",
+        "title": {
+          "en": "Change mode",
+          "fr": "Changer le Mode"
+        },
+        "titleFormatted": {
+          "en": "Change pilot wire mode to [[mode]]",
+          "fr": "Changer le mode fil pilote vers [[mode]]"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=radiator"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Off"
+                }
+              },
+              {
+                "id": "eco",
+                "label": {
+                  "en": "Eco",
+                  "fr": "Eco"
+                }
+              },
+              {
+                "id": "comfort",
+                "label": {
+                  "en": "Confort",
+                  "fr": "Confort"
+                }
+              },
+              {
+                "id": "frost",
+                "label": {
+                  "en": "Hors gel",
+                  "fr": "Hors gel"
+                }
+              }
+            ],
+            "title": {
+              "en": "Pilot wire mode",
+              "fr": "Mode Fil Pilote"
+            }
+          }
+        ]
+      },
+      {
+        "id": "set_board_mode",
+        "title": {
+          "en": "Set all 7 outputs on this Remora",
+          "fr": "Régler les 7 sorties de cette Remora"
+        },
+        "hint": {
+          "en": "Includes outputs not paired with Homey. Changes can be partial during load shedding.",
+          "fr": "Inclut les sorties non appairées à Homey. Le délestage peut empêcher une application complète."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=radiator"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Off"
+                }
+              },
+              {
+                "id": "eco",
+                "label": {
+                  "en": "Eco",
+                  "fr": "Eco"
+                }
+              },
+              {
+                "id": "comfort",
+                "label": {
+                  "en": "Confort",
+                  "fr": "Confort"
+                }
+              },
+              {
+                "id": "frost",
+                "label": {
+                  "en": "Hors gel",
+                  "fr": "Hors gel"
+                }
+              }
+            ]
+          }
+        ],
+        "titleFormatted": {
+          "en": "Set all 7 outputs on this Remora to [[mode]]",
+          "fr": "Régler les 7 sorties de cette Remora sur [[mode]]"
+        }
+      }
+    ],
+    "conditions": [
+      {
+        "id": "is_mode",
+        "title": {
+          "en": "Pilot wire mode is",
+          "fr": "Le mode fil pilote est"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=radiator"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Off"
+                }
+              },
+              {
+                "id": "eco",
+                "label": {
+                  "en": "Eco",
+                  "fr": "Eco"
+                }
+              },
+              {
+                "id": "comfort",
+                "label": {
+                  "en": "Confort",
+                  "fr": "Confort"
+                }
+              },
+              {
+                "id": "frost",
+                "label": {
+                  "en": "Hors gel",
+                  "fr": "Hors gel"
+                }
+              }
+            ]
+          }
+        ],
+        "titleFormatted": {
+          "en": "Pilot wire mode is [[mode]]",
+          "fr": "Le mode fil pilote est [[mode]]"
+        }
+      }
+    ],
+    "triggers": [
+      {
+        "id": "mode_changed",
+        "title": {
+          "en": "Pilot wire mode changed",
+          "fr": "Le mode fil pilote a changé"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=radiator"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "mode",
+            "type": "string",
+            "title": {
+              "en": "Mode",
+              "fr": "Mode"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "homepage": "https://github.com/tducret/programmateur-fil-pilote-wifi"
+}

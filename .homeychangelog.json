@@ -1,0 +1,14 @@
+{
+  "0.1.4": {
+    "en": "Initial public release: local control of seven Remora pilot-wire outputs, four heating modes, pairing and repair, Flow actions and load-shedding status.",
+    "fr": "Première version publique : sept sorties fil pilote en local, quatre modes, appairage et réparation, cartes Flow et état de délestage."
+  },
+  "0.1.5": {
+    "en": "Credit the free, open-source Remora project and link to hallard/remora_soft from the app listing.",
+    "fr": "Ajout de la référence au projet Remora, open source et gratuit, et du lien vers hallard/remora_soft sur la fiche."
+  },
+  "0.1.6": {
+    "en": "Reference the free, open-source Remora project and both upstream repositories: tducret/programmateur-fil-pilote-wifi and hallard/remora_soft.",
+    "fr": "Références au projet Remora, open source et gratuit, et aux dépôts tducret/programmateur-fil-pilote-wifi et hallard/remora_soft."
+  }
+}

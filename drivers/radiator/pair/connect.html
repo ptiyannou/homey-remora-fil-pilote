@@ -1,0 +1,32 @@
+<form class="homey-form" id="connect-form">
+  <h1 class="homey-title">Remora Fil Pilote</h1>
+  <p class="homey-subtitle">Indiquez l’adresse de la Remora sur votre réseau local.</p>
+  <div class="homey-form-group">
+    <label class="homey-form-label" for="host">Adresse IP ou hostname</label>
+    <input class="homey-form-input" id="host" value="" placeholder="remora.local" required autocomplete="off">
+  </div>
+  <p id="status" role="status" aria-live="polite"></p>
+  <button type="submit" class="homey-button-primary-full" id="submit">Vérifier la Remora</button>
+</form>
+<script>
+Homey.setTitle('Remora Fil Pilote');
+const contextPromise = Homey.emit('get_context', {}).then(context => {
+  document.getElementById('host').value = context.host;
+  return context;
+});
+contextPromise.catch(error => { document.getElementById('status').textContent = error.message || String(error); });
+document.getElementById('connect-form').addEventListener('submit', async event => {
+  event.preventDefault();
+  const button = document.getElementById('submit');
+  const status = document.getElementById('status');
+  button.disabled = true; status.textContent = 'Connexion…';
+  try {
+    const info = await Homey.emit('connect', { host: document.getElementById('host').value });
+    status.textContent = 'Remora détectée : ' + info.chip;
+    const context = await contextPromise;
+    if (context.repair) await Homey.done();
+    else await Homey.showView('list_devices');
+  } catch (error) { status.textContent = error.message || String(error); }
+  finally { button.disabled = false; }
+});
+</script>

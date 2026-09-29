@@ -1,0 +1,15 @@
+{
+  "name": "fr.remora.filpilote",
+  "version": "0.1.6",
+  "private": true,
+  "description": "Local Homey SDK 3 integration for Remora V1.2",
+  "main": "app.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "probe": "node scripts/probe.js",
+    "validate": "homey app validate --level debug"
+  }
+}

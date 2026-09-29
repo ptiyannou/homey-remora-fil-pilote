@@ -1,0 +1,3 @@
+Adaptez votre chauffage fil pilote à vos habitudes. Pilotez jusqu’à sept sorties indépendantes par boîtier Remora et choisissez Off, Eco, Confort ou Hors gel depuis vos appareils ou vos Flows. Les échanges restent sur votre réseau local.
+
+Remora est un projet open source gratuit, présenté sur GitHub dans tducret/programmateur-fil-pilote-wifi, accessible via le lien du site du projet sur cette fiche. Le logiciel utilisé est disponible dans hallard/remora_soft. Cette intégration communautaire indépendante est testée sur Remora V1.2 avec le firmware 1.4.0. Indiquez l’IP ou le hostname lors de l’appairage. Chaque radiateur conserve son thermostat ; aucune consommation par radiateur n’est mesurée.

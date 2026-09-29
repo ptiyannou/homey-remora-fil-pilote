@@ -1,0 +1,3 @@
+Make your pilot-wire heating part of your daily routines. Control up to seven independent radiator outputs per Remora controller and choose Off, Eco, Comfort or Frost protection from your devices or Flows. Communication stays on your local network.
+
+Remora is a free, open-source project presented on GitHub in tducret/programmateur-fil-pilote-wifi, accessible through the project website link on this listing. The firmware used is available in hallard/remora_soft. This independent community integration is tested with Remora V1.2 and firmware 1.4.0. Enter the IP address or hostname when pairing. Each radiator retains its thermostat; energy use per radiator is not measured.
