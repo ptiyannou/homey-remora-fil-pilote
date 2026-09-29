@@ -135,3 +135,7 @@ Remora est un projet open source gratuit. Le logiciel du boîtier est disponible
 Présentation du projet, matériel et logiciel : [tducret/programmateur-fil-pilote-wifi](https://github.com/tducret/programmateur-fil-pilote-wifi). Firmware utilisé pour cette intégration : [hallard/remora_soft](https://github.com/hallard/remora_soft).
 
 [Discussion sur le forum Homey](https://community.homey.app/t/app-pro-shs-test-remora-fil-pilote/160170)
+
+## Licence
+
+Le code de cette application est distribué sous [licence MIT](LICENSE), copyright © 2026 yann baillet. Les projets Remora et PyRemora référencés conservent leurs propres licences.

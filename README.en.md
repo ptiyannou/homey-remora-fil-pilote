@@ -63,3 +63,7 @@ Remora is a free, open-source project. This is an independent community integrat
 Thanks to the original authors and contributors. See [image provenance](docs/IMAGE-PROVENANCE.md) for the product visuals.
 
 [Homey community discussion](https://community.homey.app/t/app-pro-shs-test-remora-fil-pilote/160170)
+
+## License
+
+This application’s code is released under the [MIT License](LICENSE), copyright © 2026 yann baillet. The referenced Remora and PyRemora projects retain their own licenses.

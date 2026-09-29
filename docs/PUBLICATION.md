@@ -24,4 +24,4 @@ Dépôt public : https://github.com/ptiyannou/homey-remora-fil-pilote
 
 Présentation publiée sous yann_baillet : https://community.homey.app/t/app-pro-shs-test-remora-fil-pilote/160170
 
-14 tests réussis et validation publish renouvelée. Statut Athom du build 3 : in_review. Les exemples publics utilisent des adresses et identifiants génériques. La licence du code reste à choisir par le propriétaire.
+14 tests réussis et validation publish renouvelée. Statut Athom du build 3 : in_review. Les exemples publics utilisent des adresses et identifiants génériques. Licence MIT choisie par le propriétaire et ajoutée au dépôt, avec la mention copyright © 2026 yann baillet.
